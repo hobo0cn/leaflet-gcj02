@@ -1,0 +1,17 @@
+{
+  "name": "leaflet-gcj02",
+  "version": "0.1.0",
+  "description": "leaflet gcj02",
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hobo0cn/leaflet-gcj02.git",
+  },
+  "keywords": [
+    "leaflet",
+    "map",
+    "gcj02"
+  ],
+  "author": "hobo0cn",
+  "license": "MIT"
+}
