@@ -7,9 +7,6 @@
     "type": "git",
     "url": "git://github.com/hobo0cn/leaflet-gcj02.git"
   },
-  "dependencies": {
-    "transformjs": "file:./lib/transform.js"
-  },
   "keywords": [
     "leaflet",
     "map",
