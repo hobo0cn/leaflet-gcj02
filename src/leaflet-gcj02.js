@@ -1,3 +1,4 @@
+require('../lib/transform.js')
 /**
  * Projection class for Baidu Spherical Mercator
  *
