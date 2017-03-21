@@ -28,7 +28,7 @@ L.Projection.GCJ02SphericalMercator = {
         var x = wgs84_latlon.lng * 20037508.34 / 180;
         var y = Math.log(Math.tan((90 + wgs84_latlon.lat) * Math.PI / 360)) / (Math.PI / 180);
         y = y * 20037508.34 / 180;
-        
+
         var leafletPoint = new L.Point(x, y);
         return leafletPoint;
 
@@ -80,53 +80,44 @@ L.Projection.GCJ02SphericalMercator = {
     // })()
 };
 
-/**
- * Transformation class for Baidu Transformation.
- * Basically, it contains the conversion of point coordinate and
- * pixel coordinate.
- *
- * @class BTransformation
- */
-L.GCJ02Transformation = function () {
-};
 
-L.GCJ02Transformation.prototype = {
-    MAXZOOM: 30,
-    /**
-     * Don't know how it used currently.
-     */
-    transform: function (point, zoom) {
-        return this._transform(point.clone(), zoom);
-    },
+L.GCJ02Transformation = L.extend({}, L.Transformation, {
+  MAXZOOM: 30,
+  /**
+   * Don't know how it used currently.
+   */
+  transform: function (point, zoom) {
+      return this._transform(point.clone(), zoom);
+  },
 
-    /**
-     * transform point coordinate to pixel coordinate
-     *
-     * @method _transform
-     * @param {Object} point point coordinate
-     * @param {Number} zoom zoom level of the map
-     * @return {Object} point, pixel coordinate
-     */
-    _transform: function (point, zoom) {
-        point.x = point.x >> (this.MAXZOOM - zoom);
-        point.y = point.y >> (this.MAXZOOM - zoom);
-        return point;
-    },
+  /**
+   * transform point coordinate to pixel coordinate
+   *
+   * @method _transform
+   * @param {Object} point point coordinate
+   * @param {Number} zoom zoom level of the map
+   * @return {Object} point, pixel coordinate
+   */
+  _transform: function (point, zoom) {
+      point.x = point.x >> (this.MAXZOOM - zoom);
+      point.y = point.y >> (this.MAXZOOM - zoom);
+      return point;
+  },
 
-    /**
-     * transform pixel coordinate to point coordinate
-     *
-     * @method untransform
-     * @param {Object} point pixel coordinate
-     * @param {Number} zoom zoom level of the map
-     * @return {Object} point, point coordinate
-     */
-    untransform: function (point, zoom) {
-        point.x = point.x << (this.MAXZOOM - zoom);
-        point.y = point.y << (this.MAXZOOM - zoom);
-        return point;
-    }
-};
+  /**
+   * transform pixel coordinate to point coordinate
+   *
+   * @method untransform
+   * @param {Object} point pixel coordinate
+   * @param {Number} zoom zoom level of the map
+   * @return {Object} point, point coordinate
+   */
+  untransform: function (point, zoom) {
+      point.x = point.x << (this.MAXZOOM - zoom);
+      point.y = point.y << (this.MAXZOOM - zoom);
+      return point;
+  }
+});
 
 /**
  * Coordinate system for Baidu EPSG3857
