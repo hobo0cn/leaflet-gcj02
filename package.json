@@ -1,6 +1,6 @@
 {
   "name": "leaflet-gcj02",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "leaflet gcj02",
   "main": "src/leaflet-gcj02.js",
   "repository": {
