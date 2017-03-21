@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "transformjs": "file:./lib/transform.js"
-  }
+  },
   "keywords": [
     "leaflet",
     "map",
