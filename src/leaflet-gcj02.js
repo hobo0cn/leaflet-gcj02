@@ -154,5 +154,5 @@ L.CRS.GCJ02 = L.extend({}, L.CRS, {
     code: 'EPSG:3857',
     projection: L.Projection.GCJ02SphericalMercator,
 
-    transformation: new L.GCJ02Transformation()
+    transformation: L.GCJ02Transformation
 });
