@@ -298,8 +298,8 @@ L.CRS.GCJ02 = L.extend({}, L.CRS, {
      * @return {Object} pixel coordinate calculated for latLng
      */
     latLngToPoint: function (latlng, zoom) { // (LatLng, Number) -> Point
-        var projectedPoint = this.projection.project(latlng);
-        return this.transformation._transform(projectedPoint, zoom);
+        var projectedPoint = L.Projection.GCJ02SphericalMercator.project(latlng);
+        return L.GCJ02Transformation._transform(projectedPoint, zoom);
     },
 
     /**
@@ -311,8 +311,8 @@ L.CRS.GCJ02 = L.extend({}, L.CRS, {
      * @return {Object} latitude and longitude
      */
     pointToLatLng: function (point, zoom) { // (Point, Number[, Boolean]) -> LatLng
-        var untransformedPoint = this.transformation.untransform(point, zoom);
-        return this.projection.unproject(untransformedPoint);
+        var untransformedPoint = L.GCJ02Transformation.untransform(point, zoom);
+        return L.Projection.GCJ02SphericalMercator.unproject(untransformedPoint);
     },
 
     code: 'EPSG:3857',
