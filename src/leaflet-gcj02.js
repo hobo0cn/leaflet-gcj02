@@ -316,7 +316,7 @@ L.CRS.GCJ02 = L.extend({}, L.CRS, {
     },
 
     code: 'EPSG:3857',
-    projection: L.Projection.GCJ02SphericalMercator,
+    projection: new L.Projection.GCJ02SphericalMercator(),
 
-    transformation: L.GCJ02Transformation
+    transformation: new L.GCJ02Transformation()
 });
