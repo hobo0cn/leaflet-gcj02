@@ -216,7 +216,7 @@ L.Projection.GCJ02SphericalMercator = {
         var lng = (bpoint.x / 20037508.34) * 180;
         var lat = (bpoint.y / 20037508.34) * 180;
 
-        lat = 180/Math.PI * (2 * Math.atan(Math.Exp(lat * Math.PI / 180)) - Math.PI / 2);
+        lat = 180/Math.PI * (2 * Math.atan(Math.exp(lat * Math.PI / 180)) - Math.PI / 2);
 
         gcj02_latlon = wgs2gcj(lat, lng);
         var latLng = new L.LatLng(gcj02_latlon.lat, gcj02_latlon.lng);
