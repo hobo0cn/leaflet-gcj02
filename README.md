@@ -1,13 +1,14 @@
-#leaflet-gcj02#
+# leaflet-gcj02 #
 
 An on-going plugin for leaflet with GCJ02 projection Map.
 
-##install##
+## install ##
 copy in your lib path.
 
-##example##
-
+## example ##
+```javascript
  var wmsLayer = L.tileLayer.wms('http://your/wms/server/url', {
                   layers: layerName,
                   crs: $window.L.CRS.GCJ02,
                   }).addTo(map);
+```
